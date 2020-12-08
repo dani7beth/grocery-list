@@ -2,6 +2,7 @@ import Grocery from './Grocery';
 const List = (props) => {
     const renderGroceries = () => {
         return props.items.map((grocery)=>{
+            
             return (
                 <Grocery
                 key={grocery.id}
@@ -9,7 +10,10 @@ const List = (props) => {
                 name={grocery.name}
                 count={grocery.count}
                 toggle={props.toggle}
-                complete={grocery.complete}/>
+                complete={grocery.complete}
+                edit={props.editItem}
+                />
+                
             );
         });
     };

@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-const GroceryListForm = (props) => {
+const EditItem = (props) => {
     const [itemName, setItemName] = useState("");
     const [itemCount, setItemCount] = useState();
 
@@ -12,10 +12,10 @@ const GroceryListForm = (props) => {
     };
 
     return (
-    <div>
+    <div id="edit-form" style="display: none">
         <form onSubmit={handleSubmit}>
             <label>
-                Item: 
+                {itemName} 
             <input 
             placeholder="enter grocery item"
             onChange={(e) =>{
@@ -25,7 +25,7 @@ const GroceryListForm = (props) => {
             />
             </label>
             <label>
-                Quantity:
+                {itemCount}
             <input 
             placeholder="2"
             type="number"
@@ -40,4 +40,4 @@ const GroceryListForm = (props) => {
     </div>
     );
 };
-export default GroceryListForm;
+export default EditItem;

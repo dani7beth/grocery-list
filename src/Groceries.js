@@ -1,4 +1,5 @@
 import React from 'react';
+import EditItem from './EditItem';
 import GroceryListForm from './GroceryListForm';
 import List from './List';
 
@@ -13,12 +14,12 @@ class Groceries extends React.Component {
         ],
     };
 
-    addGrocery = (itemName) => {
+    addGrocery = (itemName, itemCount) => {
         console.log(itemName);
         const item = {
             id: Math.random(),
             name: itemName,
-            count: Math.floor(Math.random() * (20 - 1) + 1),
+            count: itemCount,
         };
 
         this.setState({
@@ -38,6 +39,27 @@ class Groceries extends React.Component {
             items: updateItems,
         });
     };
+
+    // add1 = () =>{
+       
+    //     this.setState({
+    //         count: this.state.count + 1,
+    //     });
+        
+    // };
+    
+    editItem = (id, name, count) => {
+        let updateItems = this.state.items.map((n)=>{
+            if(n.id !== id){
+                return n;
+            }
+            return {...n, name: name, count: count};
+        });
+        this.setState({
+            items: updateItems,
+        });
+    };
+
     
 
     render () {
@@ -48,10 +70,21 @@ class Groceries extends React.Component {
                 <List 
                     items={this.state.items}
                     toggle={this.toggle}
+                    add1={this.add1}
+                    editItem={this.editItem}
                 />
+                {/* <EditItem editName={this.editName}/> */}
+               
 
                 {/* //lets try a singular toggle - it worked*/}
                 {/* <div onClick={()=> this.toggle(1)}>toggle 1</div> */}
+
+                {/* lets add a static update item name */}
+                {/* <div onClick={()=> this.editName(1)}>change first item name</div> */}
+                
+                
+
+
             </div>
         );
     }

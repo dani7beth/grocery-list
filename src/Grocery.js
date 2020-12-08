@@ -1,8 +1,16 @@
-const Grocery = ({name, count, complete, id, toggle}) =>{
+const Grocery = ({name, count, complete, id, toggle, edit}) =>{
+    console.log(count);
+
     const handleClick = () =>{
         toggle(id);
     }
-    
+
+    const editName = () =>{
+        name = prompt('Enter the edited name: ');
+        count = prompt("Enter the new count: ");
+        edit(id, name, count);
+    }
+
     return (
         <li
             style={
@@ -14,8 +22,10 @@ const Grocery = ({name, count, complete, id, toggle}) =>{
             }
         >
         {name}  <input type="checkbox" onClick={handleClick} checked={complete}/>
-        <br/ > quantity: {count}
-        <br />   
+        <br/ > quantity: {count} 
+        <button onClick={editName}>edit me</button>
+        <br />  
+        <br/ >
         <br />       
         </li>
     );
