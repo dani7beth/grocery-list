@@ -1,5 +1,4 @@
 import React from 'react';
-import EditItem from './EditItem';
 import GroceryListForm from './GroceryListForm';
 import List from './List';
 
@@ -64,7 +63,7 @@ class Groceries extends React.Component {
 
     render () {
         return (
-            <div>
+            <div class="groceries">
                 <h1>Grocery List</h1>
                 <GroceryListForm addGrocery={this.addGrocery} />
                 <List 

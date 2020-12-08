@@ -1,3 +1,4 @@
+import Button from 'react-bootstrap/Button';
 const Grocery = ({name, count, complete, id, toggle, edit}) =>{
     console.log(count);
 
@@ -12,7 +13,7 @@ const Grocery = ({name, count, complete, id, toggle, edit}) =>{
     }
 
     return (
-        <li
+        <li class="list-group-item d-flex justify-content-between align-items-center "
             style={
                 complete ?{
                     ...styles.item,
@@ -21,12 +22,13 @@ const Grocery = ({name, count, complete, id, toggle, edit}) =>{
                 : styles.item
             }
         >
-        {name}  <input type="checkbox" onClick={handleClick} checked={complete}/>
-        <br/ > quantity: {count} 
-        <button onClick={editName}>edit me</button>
+        {name}  
+        <br /> quantity: {count} 
+        <Button class="btn btn-primary btn-sm" onClick={editName}>edit me</Button>
         <br />  
-        <br/ >
-        <br />       
+        <br />
+        <br /> 
+        <input type="checkbox" onClick={handleClick} checked={complete}/>     
         </li>
     );
 };

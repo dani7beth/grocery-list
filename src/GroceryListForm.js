@@ -12,8 +12,9 @@ const GroceryListForm = (props) => {
     };
 
     return (
-    <div>
+    <div class="form">
         <form onSubmit={handleSubmit}>
+            <div class="form-group">
             <label>
                 Item: 
             <input 
@@ -24,6 +25,9 @@ const GroceryListForm = (props) => {
             value={itemName}
             />
             </label>
+            </div>
+            <br />
+            <div class="form-group">
             <label>
                 Quantity:
             <input 
@@ -35,7 +39,9 @@ const GroceryListForm = (props) => {
             }}
             />
             </label>
-            <input type="submit" value="Submit" />
+            <br />
+            <input class="btn btn-success" type="submit" value="Submit" />
+            </div>
         </form>
     </div>
     );

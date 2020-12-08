@@ -17,7 +17,7 @@ const List = (props) => {
             );
         });
     };
-    return <ul>{renderGroceries()}</ul>;
+    return <ul class="list-group">{renderGroceries()}</ul>;
 };
 
 export default List;
